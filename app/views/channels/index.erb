@@ -1,0 +1,37 @@
+<div class="container">
+  <% if current_user %>
+  <h3><i><%= current_user.first_name %> <%= current_user.last_name %></i>, Hey!</h3>
+  <% end %>
+  <p>Information about channel <%= @channel.name %></p>
+
+  <br>
+
+  <table>
+    <tr>
+      <th>Name:     </th>
+      <th>callsign:     </th>
+      <th>Price per month:     </th>
+      <th>total number of subscribers:     </th>
+    </tr>
+
+    <tr>
+      <td><%=@channel.name %></td>
+      <td><%=@channel.callsign %></td>
+      <td>$ <%=@channel.price_per_month %></td>
+      <td><%= @channel.number_of_subscription %></td>
+    </tr>
+  </table>
+
+  <% if @subscription != nil %>
+  <form method="post" action="/channels/<%= @channel.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Unsubscribe" class="button">
+  </form>
+  <% elsif current_user%>
+
+  <form method="post" action="/channels/<%= @channel.id %>">
+    <input type="submit" value="Subscribe" class="button">
+  </form>
+  <% end %>
+
+</div>

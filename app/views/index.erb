@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Welcome to Channel Subscription Application!</h1>
+<% if @channels%>
+  <table>
+    <tr>
+      <th>Name: </th>
+      <th>Call sign: </th>
+      <th>Price / month: </th>
+      <th>Number of subscribers: </th>
+      <br>
+    </tr>
+    <br>
+
+    <%   @channels.each do |channel| %>
+    <tr>
+
+      <td><a href="<%= "/channels/#{channel.id}" %>"><%=channel.name %></a></td>
+      <td><%=channel.callsign %></td>
+      <td>$ <%=channel.price_per_month %></td>
+      <td><%= channel.number_of_subscription %></td>
+    </tr>
+    <% end %>
+
+
+
+  </table>
+  <% end %>
+</div>

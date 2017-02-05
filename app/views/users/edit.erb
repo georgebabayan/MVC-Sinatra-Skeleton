@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>EDIT your account</h4>
+    <table>
+
+      <form method="post" action="/users/<%= @user.id %>">
+        <input type="hidden" name="_method" value="put">
+
+        <label for="name_input">First name:</label>
+        <input id="name_input" name="user[first_name]" type="text" value="<%= @user.try(:first_name) %>" required>
+        <br>
+
+        <label for="name_input">Last name:</label>
+        <input id="name_input" name="user[last_name]" type="text" value="<%= @user.try(:last_name) %>" required>
+        <br>
+
+        <label for="email_input">Email:</label>
+        <input id="email_input"  name="user[email]" type="text" value="<%= @user.try(:email) %>" required>
+        <br>
+
+        <input type="submit" value="Update Account" class="button">
+      </form>
+
+
+      <form method="post" action="/users/<%= @user.id %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete" class="button">
+      </form>
+
+
+    </table>
+  </div>
