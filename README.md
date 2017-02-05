@@ -1,2 +1,2 @@
-## Defult skeleton for sinatr
+## Default skeleton for sinatra
 
