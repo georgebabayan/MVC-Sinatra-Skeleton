@@ -1,14 +1,15 @@
 <% if current_user %>
 <div class="container">
-  <h3><i><%= @user.username %></i>, Welcome to profile editor!</h3>
+<h3>You are in user info!</h3>
+</div>
+<div class="container">
+  <p><b><%= (@user.username).capitalize %></b>, welcome to profile editor!<p>
 
 
-  <p>You are in user info!</p>
 
   <table>
     <tr>
       <th>Username: </th>
-      <th>Last name: </th>
       <th>Email: </th>
     </tr>
 
@@ -17,27 +18,9 @@
   </table>
 
   <br>
-  <table>
-    <tr>
-      <th>Name: </th>
-      <th>Call sign: </th>
-      <th>Price / month: </th>
-    </tr>
 
-    <% if @user.channels %>
-      <% @user.channels.each do |channel| %>
-      <tr>
-        <td><a href="<%= "/channels/#{channel.id}" %>"><%=channel.name %></a></td>
-        <td><%=channel.callsign %></td>
-        <td>$ <%=channel.price_per_month %></td>
-      </tr>
-      <% end %>
-    <% end %>
-  </table>
 
-</div>
-
-<div class="container">
+<div>
   <a href='/users/<%= @user.id %>/edit'>Edit you profile</a>
 </div>
 <% end %>

@@ -17,10 +17,11 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
+    login(@user)
     redirect "/users/#{@user.id}"
   else
     @errors = @user.errors.full_messages
-    erb :'users/new'
+    erb :'/sessions/wrong_login'
   end
 end
 
