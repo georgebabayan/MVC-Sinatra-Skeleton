@@ -7,24 +7,23 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js?app=skills"></script>
 
-  <title></title>
-
+  <title>George B. website</title>
   <nav>| <a href="/">Home page</a> |
     <a href="/users/new">New User</a> |
     <% if current_user %>
 
-      Current User: <a href="/users/<%= current_user.id %>">  <%= current_user.email %>  </a>
-      <form class="form-1" action="/logout" method="post">
-        <input type="hidden" name="_method" value="delete" />
-        <input type="submit" class="sign-out-link" value="sign out" />
-    <% else %>
-        <a href="/users/login">Log in</a> |
-    <% end %>
-      </form>
+    Current User: <a href="/users/<%= current_user.id %>">  <%= current_user.email %>  </a>
+    <form class="form-1" action="/logout" method="post">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" class="sign-out-link" value="sign out" />
+      <% else %>
+      <a href="/users/login">Log in</a> |
+      <% end %>
+    </form>
   </nav>
-
 </head>
 <body>
   <%= yield %>
+  <div class="parallax"></div>
 </body>
 </html>
