@@ -13,7 +13,7 @@
     <% if current_user %>
 
     Current User: <a href="/users/<%= current_user.id %>">  <%= current_user.email %>  </a>
-    <form class="form-1" action="/logout" method="post">
+    <form  action="/logout" method="post">
       <input type="hidden" name="_method" value="delete" />
       <input type="submit" class="sign-out-link" value="sign out" />
       <% else %>
@@ -22,8 +22,8 @@
     </form>
   </nav>
 </head>
+<!-- <div class="parallax"></div> -->
 <body>
   <%= yield %>
-  <div class="parallax"></div>
 </body>
 </html>
