@@ -2,7 +2,7 @@
   <h3>EDIT your account</h4>
     <table>
 
-      <form method="post" action="/users/<%= @user.id %>">
+      <form class="form-1"  method="post" action="/users/<%= @user.id %>">
         <input type="hidden" name="_method" value="put">
 
         <label for="name_input">First name:</label>
@@ -21,7 +21,7 @@
       </form>
 
 
-      <form method="post" action="/users/<%= @user.id %>">
+      <form class="form-1" method="post" action="/users/<%= @user.id %>">
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete" class="button">
       </form>

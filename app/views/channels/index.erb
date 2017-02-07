@@ -23,13 +23,13 @@
   </table>
 
   <% if @subscription != nil %>
-  <form method="post" action="/channels/<%= @channel.id %>">
+  <form class="form-1" method="post" action="/channels/<%= @channel.id %>">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Unsubscribe" class="button">
   </form>
   <% elsif current_user%>
 
-  <form method="post" action="/channels/<%= @channel.id %>">
+  <form class="form-1" method="post" action="/channels/<%= @channel.id %>">
     <input type="submit" value="Subscribe" class="button">
   </form>
   <% end %>

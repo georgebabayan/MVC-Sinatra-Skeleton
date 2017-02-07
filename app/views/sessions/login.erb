@@ -1,19 +1,13 @@
-<div class="container">
-  <h3> Login form </h3>
-
-  <table>
-    <form method="post" action="/login">
-
-      <div>
-        <label><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="user[email]" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="user[password]" required>
-
-        <button type="submit">Login</button>
-      </div>
-    </form>
-    <p>you better remember your password, no 'forgot password option'<p>
-  </table>
-</div>
+  <form class="form-1" method="post" action="/login">
+    <p class="field">
+      <input type="text" name="user[email]" placeholder="Username or email" required>
+      <i class="icon-user icon-large"></i>
+    </p>
+    <p class="field">
+      <input type="password" name="user[password]" placeholder="Password" required>
+      <i class="icon-lock icon-large"></i>
+    </p>
+    <p class="submit">
+      <button type="submit" name="submit" value="LogIn"><i class="icon-arrow-right icon-large"></i></button>
+    </p>
+  </form>
